@@ -1,0 +1,8 @@
+# Godot folders
+.godot/
+.import/
+.mono/
+*.import
+*.tmp
+*.log
+
