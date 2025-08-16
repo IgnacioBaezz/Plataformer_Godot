@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://clcdvdbkovo0y"]
+
+[ext_resource type="Script" uid="uid://cvoclbsyujgvx" path="res://scripts/palyer1.gd" id="1_qir2g"]
+[ext_resource type="Texture2D" uid="uid://pta68v3dvxf7" path="res://assets/sprites/NaveTv01.png" id="2_lkt5g"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_qir2g")
+
+[node name="NaveTv01" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_lkt5g")
