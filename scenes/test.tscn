@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1hktevvjoga"]
+
+[ext_resource type="PackedScene" uid="uid://clcdvdbkovo0y" path="res://scenes/player1.tscn" id="1_errlg"]
+[ext_resource type="Texture2D" uid="uid://dtaonarb6ofph" path="res://assets/sprites/AsteroideAv01.png" id="2_bl13t"]
+[ext_resource type="Texture2D" uid="uid://cqnwvsafa40bc" path="res://assets/sprites/blue-preview.png" id="3_iyx0m"]
+
+[node name="Test" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Blue-preview" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575, 324)
+scale = Vector2(1.45098, 1.39167)
+texture = ExtResource("3_iyx0m")
+
+[node name="Player1" parent="." instance=ExtResource("1_errlg")]
+position = Vector2(669, 479)
+
+[node name="Camera2D2" type="Camera2D" parent="Player1"]
+offset = Vector2(0, -100)
+
+[node name="Asteroides" type="Node2D" parent="."]
+
+[node name="Asteroide1" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(-356, -155)
+scale = Vector2(3, 3)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide2" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(295, -243)
+scale = Vector2(4.8125, 4.5625)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide3" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(7, -297)
+rotation = -1.68725
+scale = Vector2(4.06084, 3.38335)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide4" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(-257, -345)
+scale = Vector2(6.40625, 6.125)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide5" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(390, 247)
+scale = Vector2(6.40625, 6.125)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide6" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(-540, 97)
+scale = Vector2(6.40625, 6.125)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide7" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(48.75, 506.5)
+scale = Vector2(10.5781, 10.0313)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide8" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(698.25, -583.5)
+scale = Vector2(5.23438, 5.09375)
+texture = ExtResource("2_bl13t")
+
+[node name="Asteroide9" type="Sprite2D" parent="Asteroides"]
+texture_filter = 1
+position = Vector2(-841.25, -381)
+scale = Vector2(7.70312, 7.5625)
+texture = ExtResource("2_bl13t")
