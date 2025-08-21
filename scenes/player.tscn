@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://clcdvdbkovo0y"]
 
-[ext_resource type="Script" uid="uid://cvoclbsyujgvx" path="res://scripts/player1.gd" id="1_qir2g"]
-[ext_resource type="Texture2D" uid="uid://pta68v3dvxf7" path="res://assets/sprites/NaveTv01.png" id="2_lkt5g"]
+[ext_resource type="Script" uid="uid://cvoclbsyujgvx" path="res://scripts/player.gd" id="1_qir2g"]
+[ext_resource type="Texture2D" uid="uid://dynti7w81kvno" path="res://assets/sprites/NaveTv01.png" id="2_lkt5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qir2g"]
 size = Vector2(49, 43)
