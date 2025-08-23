@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0d3y4d88yugo"]
 
-[ext_resource type="Texture2D" uid="uid://bs4pdof7swl6d" path="res://assets/sprites/03.png" id="1_27eus"]
-[ext_resource type="Script" uid="uid://unfx02gnpgv6" path="res://scenes/bullet.gd" id="1_uu6iy"]
+[ext_resource type="Texture2D" uid="uid://bhhbcyfpj3076" path="res://assets/sprites/03.png" id="1_27eus"]
+[ext_resource type="Script" uid="uid://unfx02gnpgv6" path="res://scripts/bullet.gd" id="1_uu6iy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27eus"]
 size = Vector2(20, 10)
 
 [node name="Bala" type="Area2D"]
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_uu6iy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

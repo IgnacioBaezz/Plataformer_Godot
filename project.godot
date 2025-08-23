@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Nave"
-run/main_scene="uid://d1hktevvjoga"
+run/main_scene="uid://58yhmnovh0sf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [dotnet]

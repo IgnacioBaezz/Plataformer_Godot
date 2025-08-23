@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://clcdvdbkovo0y"]
+[gd_scene load_steps=7 format=3 uid="uid://clcdvdbkovo0y"]
 
 [ext_resource type="Script" uid="uid://cvoclbsyujgvx" path="res://scripts/player.gd" id="1_qir2g"]
-[ext_resource type="Texture2D" uid="uid://dynti7w81kvno" path="res://assets/sprites/NaveTv01.png" id="2_lkt5g"]
+[ext_resource type="Texture2D" uid="uid://bpgp66b3r7u3q" path="res://assets/sprites/NaveTv01.png" id="2_lkt5g"]
+[ext_resource type="AudioStream" uid="uid://d2b0u3rsdf2tn" path="res://assets/sounds/ScatterNoise1.mp3" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://dg3k1xlr7ovhb" path="res://assets/sounds/laser1.wav" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qir2g"]
 size = Vector2(49, 43)
@@ -11,6 +13,8 @@ offsets = PackedFloat32Array(0, 0.366071, 0.919643)
 colors = PackedColorArray(0.923268, 0, 0.184919, 1, 0.957963, 0.717413, 0.401122, 1, 1, 1, 1, 1)
 
 [node name="Player1" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+motion_mode = 1
 script = ExtResource("1_qir2g")
 
 [node name="NaveTv01" type="Sprite2D" parent="."]
@@ -40,3 +44,14 @@ angular_velocity_max = 1.0
 scale_amount_min = 3.0
 scale_amount_max = 3.0
 color_ramp = SubResource("Gradient_qir2g")
+
+[node name="thrusterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qhqgy")
+volume_db = -10.0
+pitch_scale = 2.0
+parameters/looping = true
+
+[node name="shootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dqkch")
+pitch_scale = 0.8
+attenuation = 0.392292

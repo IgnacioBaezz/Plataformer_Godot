@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://58yhmnovh0sf"]
+
+[ext_resource type="PackedScene" uid="uid://clcdvdbkovo0y" path="res://scenes/player.tscn" id="1_hycen"]
+[ext_resource type="Texture2D" uid="uid://43hap3ynct6y" path="res://assets/sprites/blue-preview.png" id="2_bgcmg"]
+[ext_resource type="Texture2D" uid="uid://c58lqwrtxae0x" path="res://assets/sprites/NaveRv01.png" id="2_d38w8"]
+[ext_resource type="PackedScene" uid="uid://b0d3y4d88yugo" path="res://scenes/bala.tscn" id="2_jgc7t"]
+[ext_resource type="PackedScene" uid="uid://covf24gtkmq4g" path="res://scenes/asteroide.tscn" id="2_ym1gw"]
+[ext_resource type="AudioStream" uid="uid://dn4h3o1j81d2f" path="res://assets/sounds/ObservingTheStar.ogg" id="6_ym1gw"]
+
+[node name="TestSceneP2" type="Node2D"]
+
+[node name="WorldScene" type="Node2D" parent="."]
+
+[node name="Asteroides" type="Node2D" parent="WorldScene"]
+
+[node name="asteroide" parent="WorldScene/Asteroides" instance=ExtResource("2_ym1gw")]
+position = Vector2(931, 195)
+
+[node name="asteroide2" parent="WorldScene/Asteroides" instance=ExtResource("2_ym1gw")]
+position = Vector2(368, 257)
+
+[node name="asteroide3" parent="WorldScene/Asteroides" instance=ExtResource("2_ym1gw")]
+position = Vector2(830, 543)
+
+[node name="asteroide4" parent="WorldScene/Asteroides" instance=ExtResource("2_ym1gw")]
+position = Vector2(706, 34)
+
+[node name="asteroide5" parent="WorldScene/Asteroides" instance=ExtResource("2_ym1gw")]
+position = Vector2(241, 729)
+
+[node name="Player1" parent="WorldScene" instance=ExtResource("1_hycen")]
+position = Vector2(422, 406)
+bullet_scene = ExtResource("2_jgc7t")
+
+[node name="Player2" parent="WorldScene" instance=ExtResource("1_hycen")]
+position = Vector2(852, 429)
+input_prefix = "p2_"
+ship_texture = ExtResource("2_d38w8")
+bullet_scene = ExtResource("2_jgc7t")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="WorldScene"]
+position = Vector2(594, 334)
+current = true
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(585.5, 327.5)
+scale = Vector2(1.4424, 1.43125)
+texture = ExtResource("2_bgcmg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(585, 331)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ym1gw")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true

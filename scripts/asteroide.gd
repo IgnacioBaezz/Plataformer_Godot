@@ -19,6 +19,7 @@ func destroy():
 	# Opcional: reproducir sonido si lo tienes
 	if has_node("AudioStreamPlayer2D"):
 		$AudioStreamPlayer2D.play()
+		
 	
 	# Desactivar sprite y colisión para que parezca destruido
 	$Sprite2D.visible = false

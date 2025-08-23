@@ -13,17 +13,15 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position += velocity * delta
-	
-
 
 func _on_area_entered(area: Area2D) -> void:
 	print("area detectada")
 	if area.is_in_group("asteroides"):
-		area.destroy()
-		queue_free()  # destruir la bala
-		return
-	if area.has_method("take_damage"):
-		area.take_damage(damage)
+		if area.has_method("take_damage"):
+			area.take_damage(damage)
+		else:
+			area.destroy()
+			queue_free()  # destruir la bala
 	queue_free()
 
 func _on_body_entered(body: Node) -> void:

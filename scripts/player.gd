@@ -59,14 +59,34 @@ func _physics_process(delta):
 		# Activar partículas
 		if not thruster.emitting:
 			thruster.emitting = true
+			$thrusterSound.play()
 	else:
 		# Desactivar partículas cuando no haya impulso
 		if thruster.emitting:
 			thruster.emitting = false
+			$thrusterSound.stop()
 	
 	if Input.is_action_pressed(input_prefix + "shoot") and can_shoot:
+		$shootSound.play()
 		shoot()
 		
 	# Aplicar "desgaste" a la velocidad
 	velocity *= damping
 	move_and_slide()
+
+# 🌌 Wrap-around con margen
+	var screen_size = get_viewport().get_visible_rect().size
+	var margin = 20  # Puedes ajustar este valor según tu preferencia
+	var pos = global_position
+
+	if pos.x > screen_size.x + margin:
+		pos.x = -margin
+	elif pos.x < -margin:
+		pos.x = screen_size.x + margin
+
+	if pos.y > screen_size.y + margin:
+		pos.y = -margin
+	elif pos.y < -margin:
+		pos.y = screen_size.y + margin
+
+	global_position = pos
