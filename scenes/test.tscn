@@ -1,19 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1hktevvjoga"]
+[gd_scene load_steps=7 format=3 uid="uid://d1hktevvjoga"]
 
 [ext_resource type="PackedScene" uid="uid://clcdvdbkovo0y" path="res://scenes/player.tscn" id="1_errlg"]
-[ext_resource type="Texture2D" uid="uid://c0i4n0he36o4t" path="res://assets/sprites/AsteroideAv01.png" id="2_bl13t"]
 [ext_resource type="Texture2D" uid="uid://cu7svr484jxm2" path="res://assets/sprites/blue-preview.png" id="3_iyx0m"]
 [ext_resource type="AudioStream" uid="uid://b2cddhci1entd" path="res://assets/sounds/ObservingTheStar.ogg" id="4_74lek"]
+[ext_resource type="PackedScene" uid="uid://b0d3y4d88yugo" path="res://scenes/bala.tscn" id="4_lpvoh"]
+[ext_resource type="Texture2D" uid="uid://da7g7513b8sr3" path="res://assets/sprites/NaveRv01.png" id="5_j5jx5"]
+[ext_resource type="PackedScene" uid="uid://covf24gtkmq4g" path="res://scenes/asteroide.tscn" id="6_jcd4p"]
 
 [node name="Test" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="bg" type="CanvasLayer" parent="."]
 layer = -100
 
-[node name="Blue-preview" type="Sprite2D" parent="CanvasLayer"]
+[node name="Blue-preview" type="Sprite2D" parent="bg"]
 position = Vector2(573, 331)
 scale = Vector2(1.45098, 1.39167)
 texture = ExtResource("3_iyx0m")
+
+[node name="Player1" parent="." instance=ExtResource("1_errlg")]
+position = Vector2(572, 422)
+bullet_scene = ExtResource("4_lpvoh")
+
+[node name="Camera2D" type="Camera2D" parent="Player1"]
+offset = Vector2(0, -100)
+
+[node name="Player2" parent="." instance=ExtResource("1_errlg")]
+texture_filter = 1
+position = Vector2(748, 316)
+input_prefix = "p2_"
+ship_texture = ExtResource("5_j5jx5")
+bullet_scene = ExtResource("4_lpvoh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_74lek")
@@ -21,69 +37,16 @@ volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
-[node name="Player1" parent="." instance=ExtResource("1_errlg")]
-position = Vector2(669, 479)
+[node name="asteroides" type="Node2D" parent="."]
 
-[node name="Camera2D2" type="Camera2D" parent="Player1"]
-offset = Vector2(0, -100)
+[node name="asteroide" parent="asteroides" instance=ExtResource("6_jcd4p")]
+position = Vector2(559, 277)
 
-[node name="Asteroides" type="Node2D" parent="."]
+[node name="asteroide2" parent="asteroides" instance=ExtResource("6_jcd4p")]
+position = Vector2(890, 181)
 
-[node name="Asteroide1" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(-356, -155)
-scale = Vector2(3, 3)
-texture = ExtResource("2_bl13t")
+[node name="asteroide3" parent="asteroides" instance=ExtResource("6_jcd4p")]
+position = Vector2(104, 383)
 
-[node name="Asteroide2" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(295, -243)
-scale = Vector2(4.8125, 4.5625)
-texture = ExtResource("2_bl13t")
-
-[node name="Asteroide3" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(7, -297)
-rotation = -1.68725
-scale = Vector2(4.06084, 3.38335)
-texture = ExtResource("2_bl13t")
-
-[node name="Asteroide4" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(-257, -345)
-scale = Vector2(6.40625, 6.125)
-texture = ExtResource("2_bl13t")
-
-[node name="Asteroide5" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(390, 247)
-scale = Vector2(6.40625, 6.125)
-texture = ExtResource("2_bl13t")
-
-[node name="Asteroide6" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(-540, 97)
-scale = Vector2(6.40625, 6.125)
-texture = ExtResource("2_bl13t")
-
-[node name="Asteroide7" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(48.75, 506.5)
-scale = Vector2(10.5781, 10.0313)
-texture = ExtResource("2_bl13t")
-
-[node name="Asteroide8" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(698.25, -583.5)
-scale = Vector2(5.23438, 5.09375)
-texture = ExtResource("2_bl13t")
-
-[node name="Asteroide9" type="Sprite2D" parent="Asteroides"]
-texture_filter = 1
-position = Vector2(-841.25, -381)
-scale = Vector2(7.70312, 7.5625)
-texture = ExtResource("2_bl13t")
-
-[node name="Player2" parent="." instance=ExtResource("1_errlg")]
-position = Vector2(817, 470)
-input_prefix = "p2_"
+[node name="asteroide4" parent="asteroides" instance=ExtResource("6_jcd4p")]
+position = Vector2(322, 143)

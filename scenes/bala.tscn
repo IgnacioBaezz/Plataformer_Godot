@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0d3y4d88yugo"]
+
+[ext_resource type="Texture2D" uid="uid://bs4pdof7swl6d" path="res://assets/sprites/03.png" id="1_27eus"]
+[ext_resource type="Script" uid="uid://unfx02gnpgv6" path="res://scenes/bullet.gd" id="1_uu6iy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27eus"]
+size = Vector2(20, 10)
+
+[node name="Bala" type="Area2D"]
+script = ExtResource("1_uu6iy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, -55)
+rotation = 4.71239
+texture = ExtResource("1_27eus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -55)
+rotation = 4.71239
+shape = SubResource("RectangleShape2D_27eus")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
